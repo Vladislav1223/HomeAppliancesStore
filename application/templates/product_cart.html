@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Корзина</h1>
+<input id="cartSearch" type="text" placeholder="Пошук товарів..." class="form-control">
+<table class="table table-bordered" >
+    <thead>
+    <tr>
+        <th>Позиція</th>
+        <th>Ціна</th>
+        <th>Кількість</th>
+        <th>Вартість</th>
+    </tr>
+    </thead>
+    <tbody id="cartTable">
+    </tbody>
+</table>
+<h2>Всього: <span id="totalSum">0</span> грн</h2>
+<button type="button" class="btn btn-primary" id="placeOrder">
+    Замовити
+</button>
+<button type="button" class="btn btn-danger" id="deleteOrder">
+    Очистити корзину
+</button>
+{% endblock %}

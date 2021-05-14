@@ -1,0 +1,22 @@
+{% from "product_form.html" import prod_form %}
+
+<html>
+<head>
+    <title>Магазин продовольчих товарів</title>
+    <link media="all" type="text/css" rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="../static/css/style.css?v=1.0">
+    <link media="all" type="text/css" rel="stylesheet" href="../static/css/custom.css?v=1.3.3">
+</head>
+<body>
+
+{% include 'navbar.html'%}
+
+{% block content %}{% endblock %}
+
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/manage-product.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

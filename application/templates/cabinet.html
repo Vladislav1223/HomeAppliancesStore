@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Особистий кабінет</h1>
+<h2>Логін: <span id="loginShow">{{login}}</span></h2>
+{% if login != 'admin' %}
+<h2>Замовлення</h2>
+<table class="table table-bordered" >
+    <thead>
+    <tr>
+        <th>Номер замовлення</th>
+        <th>Дата</th>
+        <th>ID покупця</th>
+        <th>Посилання</th>
+    </tr>
+    </thead>
+    <tbody id="ordersTable">
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}

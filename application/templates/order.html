@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Замовлення</h1>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Назва товару</th>
+        <th>Ціна</th>
+        <th>Кількість</th>
+        <th>Вартість</th>
+    </tr>
+    </thead>
+    <tbody id="orderTable">
+    {% for product in orderitems %}
+    <tr data-id="{{product.product_id}}" data-name="{{product.prod_name}}">
+        <td>{{ product.prod.prod_name }}</td>
+        <td>{{ product.prod.price }}</td>
+        <td>{{ product.prod.qty }}</td>
+        <td>{{ product.prod.price * product.prod.qty }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h2>Всього: <span id="totalSum">{{total_sum}}</span> грн</h2>
+{% endblock %}

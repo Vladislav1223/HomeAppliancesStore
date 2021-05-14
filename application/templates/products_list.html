@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Список товарів</h1>
+<button type="button" class="btn btn-sm btn-primary pull-right add-product" data-toggle="modal"
+        data-target="#productModal">
+    Додати продукт
+</button>
+<input id="prodSearch" type="text" class="form-control" placeholder="Пошук товарів...">
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Назва</th>
+        <th>Категорія</th>
+        <th>Виробник</th>
+        <th>Ціна</th>
+        <th>К-сть на складі</th>
+        <th>Дія</th>
+    </tr>
+    </thead>
+    <tbody id="prodTable">
+    {% for product in products %}
+    <tr data-id="{{product.product_id}}" data-name="{{product.prod_name}}">
+        <th>{{ product.product_id }}</th>
+        <td>{{ product.prod_name }}</td>
+        <td>{{ product.category.category_name }}</td>
+        <td>{{ product.producer.producer_name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.qty }}</td>
+        <td>
+            <span class="btn btn-xs btn-danger delete-product">Видалити</span>
+            <span class="btn btn-xs btn-info edit-product" data-toggle="modal"
+                  data-target="#productModal">Редагувати</span>
+            <span class="btn btn-xs btn-warning addToCart">Додати в корзину</span>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include 'product_form.html'%}
+
+{% endblock %}

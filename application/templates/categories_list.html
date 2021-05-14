@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Список категорій</h1>
+<button type="button" class="btn btn-sm btn-primary pull-right add-category" data-toggle="modal"
+        data-target="#categoryModal">
+    Додати категорю
+</button>
+<input id="prodSearch" type="text" class="form-control" placeholder="Пошук категорій...">
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Назва</th>
+        <th>Дія</th>
+    </tr>
+    </thead>
+    <tbody id="prodTable">
+    {% for category in categories %}
+    <tr data-id="{{category.category_id}}" data-name="{{category.category_name}}">
+        <th>{{ category.category_id }}</th>
+        <td>{{ category.category_name }}</td>
+        <td>
+            <span class="btn btn-xs btn-danger delete-category">Видалити</span>
+            <span class="btn btn-xs btn-info edit-category" data-toggle="modal"
+                  data-target="#categoryModal">Редагувати</span>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include 'category_form.html'%}
+
+{% endblock %}

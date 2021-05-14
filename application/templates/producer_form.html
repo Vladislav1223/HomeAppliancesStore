@@ -1,0 +1,29 @@
+<div class="modal fade-scale" id="producerModal" role="dialog" data-backdrop="static">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="producerFormTitle">Додати нового виробника</h4>
+            </div>
+            <div class="modal-body">
+                <form id="producerForm">
+                    <input type="hidden" name="id" id="producerFormId" value="0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Назва</label>
+                                <input class="form-control" placeholder="Назва" name="name" id="producerFormName" type="text" value="">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                <button type="button" class="btn btn-primary" id="saveProducer">Зберегти</button>
+                <button type="button" class="btn btn-primary" id="saveEditedProducer">Зберегти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

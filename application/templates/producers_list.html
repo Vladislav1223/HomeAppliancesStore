@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Список виробників</h1>
+<button type="button" class="btn btn-sm btn-primary pull-right add-producer" data-toggle="modal"
+        data-target="#producerModal">
+    Додати виробника
+</button>
+<input id="prodSearch" type="text" class="form-control" placeholder="Пошук виробників...">
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Назва</th>
+        <th>Дія</th>
+    </tr>
+    </thead>
+    <tbody id="prodTable">
+    {% for producer in producers %}
+    <tr data-id="{{producer.producer_id}}" data-name="{{producer.producer_name}}">
+        <th>{{ producer.producer_id }}</th>
+        <td>{{ producer.producer_name }}</td>
+        <td>
+            <span class="btn btn-xs btn-danger delete-producer">Видалити</span>
+            <span class="btn btn-xs btn-info edit-producer" data-toggle="modal"
+                  data-target="#producerModal">Редагувати</span>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include 'producer_form.html'%}
+
+{% endblock %}

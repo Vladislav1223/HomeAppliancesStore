@@ -1,0 +1,63 @@
+<div class="modal fade-scale" id="productModal" role="dialog" data-backdrop="static">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="prodFormTitle">Додати новий продукт</h4>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" name="id" id="prodFormId" value="0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Назва</label>
+                                <input class="form-control" placeholder="Назва" name="name" id="prodFormName" type="text" value="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Категорія</label>
+                                <select name="categories" id="prodFormCategories" class="form-control">
+                                    <option value="0">-</option>
+                                    {% for category in categories %}
+                                        <option value={{category.category_id}}>{{category.category_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Виробник</label>
+                                <select name="producers" id="prodFormProducers" class="form-control">
+                                    <option value="0">-</option>
+                                    {% for producer in producers %}
+                                        <option value={{producer.producer_id}}>{{producer.producer_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Ціна</label>
+                                <input class="form-control" placeholder="Ціна" name="price" id="prodFormPrice" type="number" value="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>К-сть на складі</label>
+                                <input class="form-control" placeholder="Кількість" name="qty" id="prodFormQty" type="number" value="">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                <button type="button" class="btn btn-primary" id="saveProduct">Зберегти</button>
+                <button type="button" class="btn btn-primary" id="saveEditedProduct">Зберегти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

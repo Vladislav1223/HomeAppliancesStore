@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 style="text-align: center">Вхід до особистого кабінету</h1>
+
+<form id="loginForm">
+    <input type="hidden" name="id" id="loginId" value="0">
+
+                <input id="login" type="text" name="login" class="form-control" placeholder="Логін" style="width: 40%; margin: 0 auto">
+
+                <input id="password" type="password" name="password" class="form-control" placeholder="Пароль" style="width: 40%; margin: 0 auto">
+
+</form>
+<button type="button" class="btn btn-sm btn-primary login-btn"
+        style="width: 40%; margin: 0 auto; display: block;">
+    Увійти
+</button>
+
+{% endblock %}
